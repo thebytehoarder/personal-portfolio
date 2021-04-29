@@ -1,0 +1,10 @@
+@import-normalize;
+
+$primary-color: rgb(31, 64, 104);
+$secondary-color: rgb(228, 63, 90);
+$background-color: rgb(27, 27, 47);
+$white-color: rgb(245, 245, 245);
+
+div {
+    color: $secondary-color;
+}
