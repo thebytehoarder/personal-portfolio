@@ -1,0 +1,39 @@
+@import "./stage-specific/StageZero.scss";
+
+@mixin transitionProperty {
+    transition: width 0.6s ease-out;
+}
+
+.rightBox {
+    @include transitionProperty();
+    @include flexCenter($justify-content: false);
+
+    background-color: $primary-color;
+    overflow: hidden;
+    width: 50%;
+
+    > .testContainer {
+        @include testText(false);
+    }
+}
+
+.middleBox {
+    @include transitionProperty();
+    @include flexCenter($justify-content: false);
+
+    background-color: rgba(0, 0, 0, 0);
+    width: 0%;
+}
+
+.leftBox {
+    @include transitionProperty();
+    @include flexCenter($justify-content: false);
+
+    background-color: $white-color;
+    overflow: hidden;
+    width: 50%;
+
+    > .testContainer {
+        @include testText(true);
+    }
+}

@@ -1,10 +1,24 @@
 @import-normalize;
+@import "./Mixins.scss";
+@import "./Variables.scss";
+@import "./Boxes.scss";
 
-$primary-color: rgb(31, 64, 104);
-$secondary-color: rgb(228, 63, 90);
-$background-color: rgb(27, 27, 47);
-$white-color: rgb(245, 245, 245);
+body {
+    @include reset;
+    background-color: $background-color;
 
-div {
-    color: $secondary-color;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+main {
+    @include flexCenter(true);
+
+    width: calc(100% - $main-padding);
+    height: calc(100vh - $main-padding);
+    margin: $main-padding;
+
+    > div {
+        @include fillHeight($main-padding);
+    }
 }

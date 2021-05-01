@@ -1,0 +1,28 @@
+.testContainer {
+    div {
+        white-space: nowrap;
+        position: relative;
+        right: 50%;
+    }
+
+    div:nth-child(2) {
+        margin-left: 6.5rem;
+    }
+
+    div:nth-child(3) {
+        margin-left: 13rem;
+    }
+}
+
+.sidewaysText {
+    position: relative;
+
+    left: calc(15vw - 100vw + 100% + #{$main-padding * 2});
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    color: $white-color;
+    font-weight: 800;
+    font-size: 4rem;
+}

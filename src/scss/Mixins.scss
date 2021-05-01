@@ -1,0 +1,39 @@
+@mixin flexCenter($row: true, $align-items: true, $justify-content: true) {
+    display: flex;
+    @if $row {
+        flex-direction: row;
+    } @else {
+        flex-direction: column;
+    }
+    @if $align-items {
+        align-items: center;
+    }
+    @if $justify-content {
+        justify-content: center;
+    }
+}
+
+@mixin reset {
+    margin: 0px;
+    padding: 0px;
+}
+
+@mixin fillHeight($padding) {
+    height: calc(100vh - #{$padding * 2});
+}
+
+@mixin testText($left: true) {
+    font-weight: 700;
+    font-size: 10rem;
+    line-height: 10rem;
+
+    position: relative;
+
+    @if $left {
+        left: 50vw;
+        color: $background-color;
+    } @else {
+        left: calc(50vw - 100vw + 100% + #{$main-padding * 2});
+        color: $white-color;
+    }
+}
