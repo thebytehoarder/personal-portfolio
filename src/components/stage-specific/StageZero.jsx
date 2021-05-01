@@ -8,12 +8,19 @@ const textContainer = (
     </div>
 );
 
-const sideText = <span className="sidewaysText">WAIT, THIS IS WORKING??</span>;
+const sideText = (
+    <span className="sidewaysTextWorking">WAIT, THIS IS WORKING??</span>
+);
 
-const getBox = (position, widths, contents, transitionSpeed, additional) => {
+const side1 = <span className="sidewaysText1">MINIMALIST</span>;
+const side2 = <span className="sidewaysText2">WEB DESIGN</span>;
+
+let redText = "GOOD LOOKING";
+let fontSize = 4;
+
+const getBox = (position, widths, content, transitionSpeed, additional) => {
     const width = widths[position];
     let name;
-    let content = contents[position] && textContainer;
 
     switch (position) {
         case 0:
@@ -31,7 +38,7 @@ const getBox = (position, widths, contents, transitionSpeed, additional) => {
         <div
             className={name}
             style={{
-                width: `${width}%`,
+                width: `calc(${width})`,
                 transition: `width ${transitionSpeed}s ease`,
             }}
         >
@@ -43,9 +50,12 @@ const getBox = (position, widths, contents, transitionSpeed, additional) => {
 
 const StageZero = ({ setStage }) => {
     const [widths, setWidths] = useState([50, 0, 50]);
-    const [contents, setContents] = useState([true, false, true]);
+    const [contents, setContents] = useState([
+        textContainer,
+        null,
+        textContainer,
+    ]);
     const [transitionSpeed, setTransitionSpeed] = useState(0.1);
-    const [showSide, setShowSide] = useState(false);
 
     useEffect(() => {
         let time = 0;
@@ -53,35 +63,124 @@ const StageZero = ({ setStage }) => {
         time += 1000;
         setTimeout(() => {
             setTransitionSpeed(0.3);
-            setWidths([90, 0, 10]);
+            setWidths(["90%", "0%", "10%"]);
         }, time);
 
         time += 350;
         setTimeout(() => {
-            setContents([true, false, false]);
-            setShowSide(true);
+            setContents([textContainer, null, sideText]);
             setTransitionSpeed(0.3);
-            setWidths([10, 0, 90]);
+            setWidths(["10%", "0%", "90%"]);
         }, time);
 
         time += 1000;
         setTimeout(() => {
-            setContents([false, false, false]);
+            setContents([side1, null, null]);
             setTransitionSpeed(0.3);
-            setWidths([50, 0, 50]);
+            setWidths(["50% + 5rem", "0%", "50% - 5rem"]);
         }, time);
 
         time += 350;
         setTimeout(() => {
-            setStage(1);
+            setContents([side1, null, side2]);
+            setTransitionSpeed(0.3);
+            setWidths(["50% - 5rem", "0%", "50% + 5rem"]);
+        }, time);
+
+        time += 350;
+        setTimeout(() => {
+            setTransitionSpeed(0.3);
+            setWidths(["50%", "0%", "50%"]);
+        }, time);
+
+        time += 1000;
+        setTimeout(() => {
+            const redContent = (
+                <span
+                    className="redText"
+                    style={{ fontSize: `${fontSize}rem` }}
+                >
+                    {redText}
+                </span>
+            );
+
+            setTransitionSpeed(0.2);
+            setWidths(["20%", "60%", "20%"]);
+            setContents([side1, redContent, side2]);
+        }, time);
+
+        time += 650;
+        setTimeout(() => {
+            setTransitionSpeed(0.1);
+            setWidths(["50%", "0%", "50%"]);
+        }, time);
+
+        time += 150;
+        setTimeout(() => {
+            redText = "FAST";
+            fontSize = 10;
+
+            const redContent = (
+                <span
+                    className="redText"
+                    style={{ fontSize: `${fontSize}rem` }}
+                >
+                    {redText}
+                </span>
+            );
+
+            setTransitionSpeed(0.2);
+            setWidths(["20%", "60%", "20%"]);
+            setContents([side1, redContent, side2]);
+        }, time);
+
+        time += 650;
+        setTimeout(() => {
+            setTransitionSpeed(0.1);
+            setWidths(["50%", "0%", "50%"]);
+        }, time);
+
+        time += 150;
+        setTimeout(() => {
+            redText = "FUN";
+            fontSize = 18;
+
+            const redContent = (
+                <span
+                    className="redText"
+                    style={{ fontSize: `${fontSize}rem` }}
+                >
+                    {redText}
+                </span>
+            );
+
+            setTransitionSpeed(0.2);
+            setWidths(["20%", "60%", "20%"]);
+            setContents([side1, redContent, side2]);
+        }, time);
+
+        time += 650;
+        setTimeout(() => {
+            const redContent = (
+                <span
+                    className="redText"
+                    style={{ fontSize: `${fontSize}rem` }}
+                >
+                    {redText}
+                </span>
+            );
+
+            setTransitionSpeed(0.1);
+            setWidths(["50%", "0%", "50%"]);
+            setContents([null, redContent, null]);
         }, time);
     }, []);
 
     return (
         <main>
-            {getBox(0, widths, contents, transitionSpeed)}
-            {getBox(1, widths, contents, transitionSpeed)}
-            {getBox(2, widths, contents, transitionSpeed, showSide && sideText)}
+            {getBox(0, widths, contents[0], transitionSpeed)}
+            {getBox(1, widths, contents[1], transitionSpeed)}
+            {getBox(2, widths, contents[2], transitionSpeed)}
         </main>
     );
 };

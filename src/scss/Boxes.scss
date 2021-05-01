@@ -7,6 +7,7 @@
 .rightBox {
     @include transitionProperty();
     @include flexCenter($justify-content: false);
+    position: relative;
 
     background-color: $primary-color;
     overflow: hidden;
@@ -20,6 +21,7 @@
 .middleBox {
     @include transitionProperty();
     @include flexCenter($justify-content: false);
+    position: relative;
 
     background-color: rgba(0, 0, 0, 0);
     width: 0%;
@@ -28,6 +30,7 @@
 .leftBox {
     @include transitionProperty();
     @include flexCenter($justify-content: false);
+    position: relative;
 
     background-color: $white-color;
     overflow: hidden;

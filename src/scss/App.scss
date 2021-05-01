@@ -21,4 +21,6 @@ main {
     > div {
         @include fillHeight($main-padding);
     }
+
+    overflow: hidden;
 }

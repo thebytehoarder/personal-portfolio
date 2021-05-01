@@ -14,7 +14,7 @@
     }
 }
 
-.sidewaysText {
+.sidewaysTextWorking {
     position: relative;
 
     left: calc(15vw - 100vw + 100% + #{$main-padding * 2});
@@ -25,4 +25,42 @@
     color: $white-color;
     font-weight: 800;
     font-size: 4rem;
+}
+
+.sidewaysText1 {
+    position: absolute;
+
+    left: calc(50vw - #{$main-padding} - 5rem);
+
+    writing-mode: vertical-rl;
+
+    color: $background-color;
+    font-weight: 800;
+    font-size: 4rem;
+}
+
+.sidewaysText2 {
+    position: absolute;
+
+    right: calc(50vw - #{$main-padding} - 5rem);
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    color: $white-color;
+    font-weight: 800;
+    font-size: 4rem;
+}
+
+.redText {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translate(-50%);
+    z-index: -1;
+
+    white-space: nowrap;
+    color: $secondary-color;
+    font-weight: 800;
 }
