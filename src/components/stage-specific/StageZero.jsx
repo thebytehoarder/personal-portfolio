@@ -18,6 +18,12 @@ const side2 = <span className="sidewaysText2">WEB DESIGN</span>;
 let redText = "GOOD LOOKING";
 let fontSize = 4;
 
+const question = (
+    <div className="question">
+        <div className="content">WHAT ABOUT MY SKILLS?</div>
+    </div>
+);
+
 const getBox = (position, widths, content, transitionSpeed, additional) => {
     const width = widths[position];
     let name;
@@ -31,6 +37,9 @@ const getBox = (position, widths, content, transitionSpeed, additional) => {
             break;
         case 2:
             name = "rightBox";
+            break;
+        default:
+            name = "";
             break;
     }
 
@@ -174,7 +183,17 @@ const StageZero = ({ setStage }) => {
             setWidths(["50%", "0%", "50%"]);
             setContents([null, redContent, null]);
         }, time);
-    }, []);
+
+        time += 750;
+        setTimeout(() => {
+            setContents([null, question, null]);
+        }, time);
+
+        time += 2500;
+        setTimeout(() => {
+            setStage(1);
+        }, time);
+    }, [setStage]);
 
     return (
         <main>
