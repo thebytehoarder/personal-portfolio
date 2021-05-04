@@ -1,0 +1,98 @@
+@import "../Mixins.scss";
+@import "../Variables.scss";
+
+.skills {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bubble {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(-50%);
+
+    color: $background-color;
+    background-color: $white-color;
+    border-radius: 50%;
+
+    transition: width 0.2s ease, height 0.2s ease, color 0.15s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+
+    text-align: center;
+    overflow: hidden;
+
+    z-index: 999;
+}
+
+.bubble:hover {
+    color: rgba(0, 0, 0, 0);
+}
+
+.hover {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 2rem;
+    font-weight: 700;
+    color: $white-color;
+
+    transition: top 0.5s ease;
+}
+
+.skill {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: $white-color;
+
+    position: absolute;
+    transition: top 1s ease, left 1s ease;
+
+    transform: translateX(-1rem) translateY(-1rem);
+
+    i {
+        font-size: 2rem;
+        width: 2.4rem;
+        text-align: center;
+    }
+
+    .hidden {
+        margin-left: 10px;
+        filter: opacity(0);
+        transition: filter 0.3s ease;
+
+        .title {
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        .text {
+            position: absolute;
+
+            margin: 0;
+            margin-top: 5px;
+            width: 18vw;
+            font-weight: 200;
+
+            transition: filter 0.15s ease;
+
+            filter: opacity(0);
+        }
+    }
+}
+
+.skill:hover .text {
+    filter: opacity(1);
+}
+
+.skill > .hidden.show {
+    filter: opacity(1);
+}

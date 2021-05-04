@@ -1,3 +1,6 @@
+@import "../Mixins.scss";
+@import "../Variables.scss";
+
 .testContainer {
     div {
         white-space: nowrap;
@@ -115,7 +118,7 @@
 
         animation-name: questionWidth, questionHeight;
         animation-delay: 0s, 2s;
-        animation-duration: 0.5s, 0.3s;
+        animation-duration: 0.2s, 0.3s;
         animation-timing-function: ease;
         animation-fill-mode: forwards;
     }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../../scss/stage-specific/StageZero.scss";
 
 const textContainer = (
     <div className="testContainer">
@@ -58,7 +59,7 @@ const getBox = (position, widths, content, transitionSpeed, additional) => {
 };
 
 const StageZero = ({ setStage }) => {
-    const [widths, setWidths] = useState([50, 0, 50]);
+    const [widths, setWidths] = useState(["50%", "0%", "50%"]);
     const [contents, setContents] = useState([
         textContainer,
         null,
