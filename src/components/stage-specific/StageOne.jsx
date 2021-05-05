@@ -2,51 +2,17 @@ import React, { useEffect, useState } from "react";
 import "../../scss/stage-specific/StageOne.scss";
 import NextStageButton from "./NextStageButton";
 import Skills from "./Skills";
+import { getBox } from "../utility/getBoxes";
 
-const getBox = (
-    position,
-    widths,
-    content,
-    transitionSpeed,
-    classes,
-    additional
-) => {
-    const width = widths[position];
-    let name;
-
-    switch (position) {
-        case 0:
-            name = "leftBox";
-            break;
-        case 1:
-            name = "middleBox";
-            break;
-        case 2:
-            name = "rightBox";
-            break;
-        default:
-            name = "";
-            break;
-    }
-
-    return (
-        <div
-            className={`${name} ${classes}`}
-            style={{
-                width: `calc(${width})`,
-                transition: `width ${transitionSpeed}s ease`,
-            }}
-        >
-            {content}
-            {additional}
-        </div>
-    );
-};
+const skills = <Skills />;
 
 const StageOne = ({ setStage }) => {
     const [widths, setWidths] = useState([50, 0, 50]);
-    const [contents, setContents] = useState([null, null, null]);
-    const [classes, setClasses] = useState([null, null, null]);
+    const [contents, setContents] = useState([
+        null,
+        skills,
+        <NextStageButton setStage={setStage} />,
+    ]);
     const [transitionSpeed, setTransitionSpeed] = useState(0.1);
 
     useEffect(() => {
@@ -56,7 +22,6 @@ const StageOne = ({ setStage }) => {
         setTimeout(() => {
             setTransitionSpeed(0.2);
             setWidths(["10%", "80%", "10%"]);
-            setContents([null, <Skills />, <NextStageButton />]);
         }, time);
     }, [setStage]);
 
@@ -72,9 +37,9 @@ const StageOne = ({ setStage }) => {
                 }, 100);
             }}
         >
-            {getBox(0, widths, contents[0], transitionSpeed, classes[0])}
-            {getBox(1, widths, contents[1], transitionSpeed, classes[1])}
-            {getBox(2, widths, contents[2], transitionSpeed, classes[2])}
+            {getBox(0, widths, contents[0], transitionSpeed)}
+            {getBox(1, widths, contents[1], transitionSpeed)}
+            {getBox(2, widths, contents[2], transitionSpeed)}
         </main>
     );
 };

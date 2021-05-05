@@ -37,7 +37,7 @@
 
     writing-mode: vertical-rl;
 
-    color: $background-color;
+    color: lighten($primary-color, 7%);
     font-weight: 800;
     font-size: 4rem;
 }

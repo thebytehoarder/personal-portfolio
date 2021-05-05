@@ -15,7 +15,7 @@
     transform: translateX(-50%) translateY(-50%);
 
     color: $background-color;
-    background-color: $white-color;
+    background-color: darken($white-color, 10%);
     border-radius: 50%;
 
     transition: width 0.2s ease, height 0.2s ease, color 0.15s ease;
@@ -56,7 +56,7 @@
     position: absolute;
     transition: top 1s ease, left 1s ease;
 
-    transform: translateX(-1rem) translateY(-1rem);
+    transform: translateX(-1.2rem) translateY(-1rem);
 
     i {
         font-size: 2rem;
@@ -95,4 +95,57 @@
 
 .skill > .hidden.show {
     filter: opacity(1);
+}
+
+@keyframes popUp {
+    0% {
+        bottom: 35px;
+        right: 35px;
+        width: 0px;
+        height: 0px;
+    }
+
+    100% {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.nextStageButton {
+    @include flexCenter();
+
+    position: absolute;
+
+    color: lighten($primary-color, 20%);
+    background-color: $background-color;
+    border-radius: 50%;
+
+    font-size: 30px;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    animation: popUp 0.7s ease forwards;
+}
+
+@keyframes close {
+    100% {
+        bottom: 35px;
+        right: 35px;
+        width: 0px;
+        height: 0px;
+    }
+
+    0% {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.nextStageButton:active {
+    animation: close 0.3s ease forwards;
 }

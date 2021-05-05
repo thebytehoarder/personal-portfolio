@@ -93,7 +93,7 @@ const Skills = () => {
         newSkillList[i].left = 50;
     }
 
-    const bubble = (300 * skillsHidden) / skillList.length;
+    const bubble = (330 * skillsHidden) / skillList.length;
 
     if (skillsHidden === 0 && !show) {
         setTimeout(() => setShow(true), 1000);
@@ -112,7 +112,7 @@ const Skills = () => {
                 style={{ width: `${bubble}px`, height: `${bubble}px` }}
                 onClick={() => setSkillsHidden(skillsHidden - 1)}
             >
-                {skillsHidden === skillList.length && "CLICK ME!"}
+                {skillList.length - skillsHidden < 2 && "CLICK ME!"}
             </div>
             {newSkillList.map((skill) => (
                 <Skill {...skill} show={show} />
