@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "../../scss/stage-specific/StageOne.scss";
 import NextStageButton from "./NextStageButton";
 import Skills from "./Skills";
 import { getBox } from "../utility/getBoxes";
 
-const skills = <Skills />;
-
 const StageOne = ({ setStage }) => {
     const [widths, setWidths] = useState([50, 0, 50]);
-    const [contents, setContents] = useState([
-        null,
-        skills,
-        <NextStageButton setStage={setStage} />,
-    ]);
+    const contents = useMemo(
+        () => [null, <Skills />, <NextStageButton setStage={setStage} />],
+        [setStage]
+    );
     const [transitionSpeed, setTransitionSpeed] = useState(0.1);
 
     useEffect(() => {

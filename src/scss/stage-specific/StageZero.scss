@@ -2,18 +2,11 @@
 @import "../Variables.scss";
 
 .testContainer {
+    @include flexCenter($row: false);
+    transform: translate(-50%);
+
     div {
         white-space: nowrap;
-        position: relative;
-        right: 50%;
-    }
-
-    div:nth-child(2) {
-        margin-left: 6.5rem;
-    }
-
-    div:nth-child(3) {
-        margin-left: 13rem;
     }
 }
 
@@ -27,32 +20,32 @@
 
     color: $white-color;
     font-weight: 800;
-    font-size: 4rem;
+    font-size: 64px;
 }
 
 .sidewaysText1 {
     position: absolute;
 
-    left: calc(50vw - #{$main-padding} - 5rem);
+    left: calc(50vw - #{$main-padding} - 80px);
 
     writing-mode: vertical-rl;
 
     color: lighten($primary-color, 7%);
     font-weight: 800;
-    font-size: 4rem;
+    font-size: 64px;
 }
 
 .sidewaysText2 {
     position: absolute;
 
-    right: calc(50vw - #{$main-padding} - 5rem);
+    right: calc(50vw - #{$main-padding} - 80px);
 
     writing-mode: vertical-rl;
     transform: rotate(180deg);
 
     color: $white-color;
     font-weight: 800;
-    font-size: 4rem;
+    font-size: 64px;
 }
 
 .redText {
@@ -63,29 +56,28 @@
     transform: translate(-50%);
     z-index: -1;
 
-    white-space: nowrap;
     color: $secondary-color;
     font-weight: 800;
 }
 
 @keyframes questionWidth {
     0% {
-        width: 0px;
+        width: 0vw;
     }
     100% {
-        width: 973.25px;
+        width: 65vw;
     }
 }
 
 @keyframes questionHeight {
     0% {
-        height: 86px;
+        height: 5.8vw;
         bottom: 0px;
     }
 
     100% {
         height: 0px;
-        bottom: 43px;
+        bottom: 2.9vw;
     }
 }
 
@@ -100,7 +92,7 @@
     transform: translate(-50%);
 
     font-weight: 800;
-    font-size: 75px;
+    font-size: 5vw;
     white-space: nowrap;
 
     color: $background-color;
@@ -121,5 +113,25 @@
         animation-duration: 0.2s, 0.3s;
         animation-timing-function: ease;
         animation-fill-mode: forwards;
+    }
+}
+
+.smartphoneWarning {
+    @include flexCenter($row: false);
+    color: $white-color;
+
+    .smartphoneImage {
+        font-size: 45px;
+        margin: 0px;
+        padding: 0px;
+
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin: 0px;
+        color: darken($white-color, 10%);
+        font-weight: 200;
+        letter-spacing: 0.4px;
     }
 }

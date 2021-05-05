@@ -40,7 +40,7 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    font-size: 2rem;
+    font-size: 35px;
     font-weight: 700;
     color: $white-color;
 
@@ -56,11 +56,11 @@
     position: absolute;
     transition: top 1s ease, left 1s ease;
 
-    transform: translateX(-1.2rem) translateY(-1rem);
+    transform: translateX(-18px) translateY(-16px);
 
     i {
-        font-size: 2rem;
-        width: 2.4rem;
+        font-size: 32px;
+        width: 38px;
         text-align: center;
     }
 
@@ -70,7 +70,7 @@
         transition: filter 0.3s ease;
 
         .title {
-            font-size: 1.4rem;
+            font-size: 22px;
             font-weight: 500;
         }
 

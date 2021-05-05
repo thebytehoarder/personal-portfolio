@@ -103,7 +103,7 @@ const Skills = () => {
         <div className="skills">
             <div
                 className="hover"
-                style={{ top: skillsHidden === 0 ? "0px" : "-2.5rem" }}
+                style={{ top: skillsHidden === 0 ? "0px" : "-50px" }}
             >
                 HOVER
             </div>
