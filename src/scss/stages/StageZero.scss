@@ -13,7 +13,7 @@
 .sidewaysTextWorking {
     position: relative;
 
-    left: calc(15vw - 100vw + 100% + #{$main-padding * 2});
+    left: calc(15vw - 100vw + 100% + #{$main-margin * 2});
 
     writing-mode: vertical-rl;
     transform: rotate(180deg);
@@ -26,7 +26,7 @@
 .sidewaysText1 {
     position: absolute;
 
-    left: calc(50vw - #{$main-padding} - 80px);
+    left: calc(50vw - #{$main-margin} - 80px);
 
     writing-mode: vertical-rl;
 
@@ -38,7 +38,7 @@
 .sidewaysText2 {
     position: absolute;
 
-    right: calc(50vw - #{$main-padding} - 80px);
+    right: calc(50vw - #{$main-margin} - 80px);
 
     writing-mode: vertical-rl;
     transform: rotate(180deg);

@@ -32,7 +32,7 @@
         left: 50vw;
         color: $background-color;
     } @else {
-        left: calc(50vw - 100vw + 100% + #{$main-padding * 2});
+        left: calc(50vw - 100vw + 100% + #{$main-margin * 2});
         color: $white-color;
     }
 }

@@ -1,15 +1,15 @@
 @mixin transitionProperty {
     transition: width 0.6s ease-out;
+    position: relative;
+    overflow: hidden;
 }
 
 .rightBox {
     @include transitionProperty();
     @include flexCenter($justify-content: false);
-    position: relative;
 
     background-color: $background-color;
     border: 1px solid lighten($primary-color, 20%);
-    overflow: hidden;
     width: 50%;
 
     > .testContainer {
@@ -24,22 +24,17 @@
 .middleBox {
     @include transitionProperty();
     @include flexCenter($justify-content: false);
-    position: relative;
 
     width: 0%;
-
-    overflow: hidden;
 }
 
 .leftBox {
     @include transitionProperty();
     @include flexCenter($justify-content: false);
-    position: relative;
 
     background-color: $background-color;
     border: 1px solid darken($white-color, 30%);
 
-    overflow: hidden;
     width: 50%;
 
     > .testContainer {
@@ -51,7 +46,7 @@ svg {
     margin: auto;
 
     width: calc(100% - 20px);
-    height: calc(100vh - #{$main-padding * 2} - 20px);
+    height: calc(100vh - #{$main-margin * 2} - 20px);
 
     position: absolute;
     top: 10px;

@@ -37,8 +37,8 @@ const skillList = [
         text: "Responsive website design with Bootstrap 4",
     },
     {
-        top: 27,
-        left: 43,
+        top: 65,
+        left: 45,
         icon: "fab fa-github",
         title: "Git",
         text: "Good knowledge of Git Version Control",
@@ -60,8 +60,8 @@ const skillList = [
             "In-depth NoSQL database management with data validation, password hashing and clean structuring. Limited knowledge of MySQL.",
     },
     {
-        top: 65,
-        left: 45,
+        top: 27,
+        left: 38,
         icon: "fas fa-book-open",
         title: "Quick learner",
         text:
@@ -103,7 +103,7 @@ const Skills = () => {
         <div className="skills">
             <div
                 className="hover"
-                style={{ top: skillsHidden === 0 ? "0px" : "-50px" }}
+                style={{ top: skillsHidden < 1 ? "0px" : "-50px" }}
             >
                 HOVER!
             </div>

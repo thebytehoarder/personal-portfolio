@@ -33,6 +33,7 @@ export const getBox = (
                 transition: `width ${transitionSpeed}s ease`,
             }}
             onClick={onClick}
+            key={position}
         >
             {(position === 0 || position === 2) && (
                 <svg width="100%" height="100%">

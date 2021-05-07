@@ -15,10 +15,10 @@ body {
 
 main {
     @include flexCenter(true);
-    margin: $main-padding;
+    margin: $main-margin;
 
     > div {
-        @include fillHeight($main-padding);
+        @include fillHeight($main-margin);
     }
 
     overflow: hidden;
