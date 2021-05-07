@@ -39,8 +39,8 @@ export const getBox = (
                 <svg width="100%" height="100%">
                     <pattern
                         id={`pattern${position}`}
-                        width="20"
-                        height="20"
+                        width="12"
+                        height="12"
                         patternUnits="userSpaceOnUse"
                     >
                         <line
@@ -49,8 +49,8 @@ export const getBox = (
                             }`}
                             x1={0}
                             y1={0}
-                            x2={20}
-                            y2={20}
+                            x2={12}
+                            y2={12}
                         />
                     </pattern>
 

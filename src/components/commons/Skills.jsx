@@ -14,50 +14,11 @@ const Skill = ({ top, left, icon, title, text, show }) => {
 
 const skillList = [
     {
-        top: 8,
-        left: 10,
-        icon: "fab fa-html5",
-        title: "HTML5 + CSS3/SASS",
-        text:
-            "Responsive front-end development with a strong preference for minimalism and a keen eye to detail. Comfortable with both pure CSS and with CSS pre-processors such as SASS.",
-    },
-    {
-        top: 12,
-        left: 65,
-        icon: "fab fa-node-js",
-        title: "Node.JS + Express",
-        text:
-            "Back-end development with Node.JS, Express and MongoDB. Good knowledge of RESTful APIs, authentication/authorization, testing, etc.",
-    },
-    {
-        top: 40,
-        left: 13,
-        icon: "fab fa-bootstrap",
-        title: "Bootstrap",
-        text: "Responsive website design with Bootstrap 4",
-    },
-    {
-        top: 65,
+        top: 60,
         left: 45,
         icon: "fab fa-github",
         title: "Git",
         text: "Good knowledge of Git Version Control",
-    },
-    {
-        top: 45,
-        left: 70,
-        icon: "fab fa-react",
-        title: "React + Redux",
-        text:
-            "Clean website development with React and Redux, with back-end integration, data validation, etc.",
-    },
-    {
-        top: 80,
-        left: 11,
-        icon: "fas fa-database",
-        title: "MongoDB/MySQL",
-        text:
-            "In-depth NoSQL database management with data validation, password hashing and clean structuring. Limited knowledge of MySQL.",
     },
     {
         top: 27,
@@ -68,12 +29,51 @@ const skillList = [
             "My strongest skill by far is being able to learn new languages/libraries/frameworks in a short amount of time on my own. I'm relatively new to web development, but I've been coding for 4 years now.",
     },
     {
-        top: 85,
+        top: 45,
+        left: 70,
+        icon: "fab fa-react",
+        title: "React + Redux",
+        text:
+            "Clean website development with React and Redux, with back-end integration, data validation, etc.",
+    },
+    {
+        top: 40,
+        left: 13,
+        icon: "fab fa-bootstrap",
+        title: "Bootstrap",
+        text: "Responsive website design with Bootstrap 4",
+    },
+    {
+        top: 80,
+        left: 11,
+        icon: "fas fa-database",
+        title: "MongoDB/MySQL",
+        text:
+            "In-depth NoSQL database management with data validation, password hashing and clean structuring. Limited knowledge of MySQL.",
+    },
+    {
+        top: 12,
+        left: 65,
+        icon: "fab fa-node-js",
+        title: "Node.JS + Express",
+        text:
+            "Back-end development with Node.JS, Express and MongoDB. Good knowledge of RESTful APIs, authentication/authorization, testing, etc.",
+    },
+    {
+        top: 76,
         left: 66,
         icon: "fab fa-js",
         title: "Javascript/Webpack",
         text:
             "In-depth knowledge of the Javascript programming language, API calls, async programming. Good knowledge of Webpack.",
+    },
+    {
+        top: 8,
+        left: 10,
+        icon: "fab fa-html5",
+        title: "HTML5 + CSS3/SASS",
+        text:
+            "Responsive front-end development with a strong preference for minimalism and a keen eye to detail. Comfortable with both pure CSS and with CSS pre-processors such as SASS.",
     },
 ];
 
@@ -109,10 +109,14 @@ const Skills = () => {
             </div>
             <div
                 className="bubble"
-                style={{ width: `${bubble}px`, height: `${bubble}px` }}
+                style={{
+                    width: `${bubble}px`,
+                    height: `${bubble}px`,
+                    fontSize: `${bubble / 10}px`,
+                }}
                 onClick={() => setSkillsHidden(skillsHidden - 1)}
             >
-                {skillList.length - skillsHidden < 2 && "CLICK ME!"}
+                CLICK ME!
             </div>
             {newSkillList.map((skill) => (
                 <Skill {...skill} show={show} />

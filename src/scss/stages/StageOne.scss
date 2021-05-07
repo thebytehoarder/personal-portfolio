@@ -8,6 +8,8 @@
 }
 
 .bubble {
+    @include flexCenter();
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,22 +20,18 @@
     background-color: darken($white-color, 10%);
     border-radius: 50%;
 
-    transition: width 0.2s ease, height 0.2s ease, color 0.15s ease;
+    transition: width 0.2s ease, height 0.2s ease, color 0.15s ease,
+        font-size 0.2s ease;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
     font-weight: 700;
 
     text-align: center;
     overflow: hidden;
 
     z-index: 999;
-}
-
-.bubble:hover {
-    color: rgba(0, 0, 0, 0);
 }
 
 .hover {
@@ -119,9 +117,8 @@
 .nextStageButton {
     @include flexCenter();
 
-    position: absolute;
+    position: fixed;
 
-    color: lighten($primary-color, 20%);
     background-color: $background-color;
     border-radius: 50%;
 
@@ -130,25 +127,17 @@
 
     cursor: pointer;
 
-    animation: popUp 0.7s ease forwards;
+    transition: bottom, right, width, height;
+    transition-timing-function: ease;
+
+    z-index: 999;
+    bottom: 55px;
 }
 
-@keyframes close {
-    100% {
-        bottom: 35px;
-        right: 35px;
-        width: 0px;
-        height: 0px;
-    }
-
-    0% {
-        bottom: 15px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-    }
+.fa-arrow-right {
+    color: lighten($primary-color, 30%);
 }
 
-.nextStageButton:active {
-    animation: close 0.3s ease forwards;
+.fa-arrow-left {
+    color: darken($white-color, 10%);
 }

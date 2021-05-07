@@ -10,19 +10,6 @@
     }
 }
 
-.sidewaysTextWorking {
-    position: relative;
-
-    left: calc(15vw - 100vw + 100% + #{$main-margin * 2});
-
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-
-    color: $white-color;
-    font-weight: 800;
-    font-size: 64px;
-}
-
 .sidewaysText1 {
     position: absolute;
 

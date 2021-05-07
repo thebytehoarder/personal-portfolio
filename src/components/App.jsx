@@ -13,9 +13,9 @@ const App = () => {
         case 1:
             return <StageOne setStage={setStage} />;
         case 2:
-            return <StageTwo />;
+            return <StageTwo setStage={setStage} />;
         default:
-            return null;
+            return <StageZero setStage={setStage} />;
     }
 };
 
