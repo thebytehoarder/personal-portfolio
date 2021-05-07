@@ -95,6 +95,9 @@
     font-size: 5vw;
     white-space: nowrap;
 
+    padding: 0px;
+    margin: 0px;
+
     color: $background-color;
     background-color: $secondary-color;
 
@@ -119,19 +122,24 @@
 .smartphoneWarning {
     @include flexCenter($row: false);
     color: $white-color;
+    background-color: $background-color;
+
+    border: 1px solid darken($white-color, 30%);
+    padding: 10px;
+
+    z-index: 999;
 
     .smartphoneImage {
         font-size: 45px;
-        margin: 0px;
+        margin: 10px 0px 20px 0px;
         padding: 0px;
-
-        margin-bottom: 10px;
     }
 
     p {
         margin: 0px;
+        font-size: 16px;
         color: darken($white-color, 10%);
-        font-weight: 200;
-        letter-spacing: 0.4px;
+        font-weight: 300;
+        letter-spacing: 0.2px;
     }
 }

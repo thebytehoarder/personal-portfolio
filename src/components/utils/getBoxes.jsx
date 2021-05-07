@@ -4,7 +4,8 @@ export const getBox = (
     content,
     transitionSpeed,
     classes,
-    additional
+    additional,
+    onClick
 ) => {
     const width = widths[position];
     let name;
@@ -31,6 +32,7 @@ export const getBox = (
                 width: `calc(${width})`,
                 transition: `width ${transitionSpeed}s ease`,
             }}
+            onClick={onClick}
         >
             {(position === 0 || position === 2) && (
                 <svg width="100%" height="100%">

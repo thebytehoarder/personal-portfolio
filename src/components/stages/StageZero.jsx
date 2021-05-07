@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { getBox } from "../utility/getBoxes";
-import "../../scss/stage-specific/StageZero.scss";
+import React, { useState } from "react";
+import { getBox } from "../utils/getBoxes";
 import {
     textContainer,
     textContainerWidth,
@@ -8,8 +7,9 @@ import {
     side2,
     question,
     getRedContent,
-} from "../utility/stageZeroParts";
-import SmartphoneWarning from "../SmartphoneWarning";
+} from "../utils/stageZeroParts";
+import SmartphoneWarning from "../commons/SmartphoneWarning";
+import "../../scss/stages/StageZero.scss";
 
 const StageZero = ({ setStage }) => {
     const [widths, setWidths] = useState(["50%", "0%", "50%"]);

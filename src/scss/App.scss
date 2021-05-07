@@ -15,9 +15,6 @@ body {
 
 main {
     @include flexCenter(true);
-
-    width: calc(100% - $main-padding);
-    height: calc(100vh - $main-padding);
     margin: $main-padding;
 
     > div {

@@ -69,3 +69,8 @@ svg {
         stroke: lighten($primary-color, 20%);
     }
 }
+
+.smartphone {
+    @include flexCenter();
+    width: 100%;
+}

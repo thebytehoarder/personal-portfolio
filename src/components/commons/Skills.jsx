@@ -17,9 +17,9 @@ const skillList = [
         top: 8,
         left: 10,
         icon: "fab fa-html5",
-        title: "HTML5 + CSS3",
+        title: "HTML5 + CSS3/SASS",
         text:
-            "Clean and responsive front-end development, strong preference for minimalist and animation rich website design",
+            "Responsive front-end development with a strong preference for minimalism and a keen eye to detail. Comfortable with both pure CSS and with CSS pre-processors such as SASS.",
     },
     {
         top: 12,
@@ -27,7 +27,7 @@ const skillList = [
         icon: "fab fa-node-js",
         title: "Node.JS + Express",
         text:
-            "Back-end development with Node.JS, Express and MongoDB RESTful API's, authentication and authorization, unit testing and much more",
+            "Back-end development with Node.JS, Express and MongoDB. Good knowledge of RESTful APIs, authentication/authorization, testing, etc.",
     },
     {
         top: 40,
@@ -40,24 +40,24 @@ const skillList = [
         top: 27,
         left: 43,
         icon: "fab fa-github",
-        title: "Github",
-        text: "Github version control knowledge, clean commits, no headaches",
+        title: "Git",
+        text: "Good knowledge of Git Version Control",
     },
     {
         top: 45,
         left: 70,
         icon: "fab fa-react",
-        title: "React + JSX",
+        title: "React + Redux",
         text:
-            "Front-end development with React Single page applications, integration with back-end services",
+            "Clean website development with React and Redux, with back-end integration, data validation, etc.",
     },
     {
         top: 80,
         left: 11,
         icon: "fas fa-database",
-        title: "MongoDB",
+        title: "MongoDB/MySQL",
         text:
-            "NoSQL database management with data validation, password hashing and clean structure",
+            "In-depth NoSQL database management with data validation, password hashing and clean structuring. Limited knowledge of MySQL.",
     },
     {
         top: 65,
@@ -65,15 +65,15 @@ const skillList = [
         icon: "fas fa-book-open",
         title: "Quick learner",
         text:
-            "Still a beginner in both front-end and back-end, I'm flexible and capable of learning new frameworks/libraries in a short amount of time if needed",
+            "My strongest skill by far is being able to learn new languages/libraries/frameworks in a short amount of time on my own. I'm relatively new to web development, but I've been coding for 4 years now.",
     },
     {
         top: 85,
         left: 66,
         icon: "fab fa-js",
-        title: "Javascript ES6",
+        title: "Javascript/Webpack",
         text:
-            "Object oriented programming and clean, state-of-the-art javascript code",
+            "In-depth knowledge of the Javascript programming language, API calls, async programming. Good knowledge of Webpack.",
     },
 ];
 
@@ -105,7 +105,7 @@ const Skills = () => {
                 className="hover"
                 style={{ top: skillsHidden === 0 ? "0px" : "-50px" }}
             >
-                HOVER
+                HOVER!
             </div>
             <div
                 className="bubble"

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import StageZero from "./stage-specific/StageZero";
+import StageZero from "./stages/StageZero";
+import StageOne from "./stages/StageOne";
 import "../scss/App.scss";
-import StageOne from "./stage-specific/StageOne";
+import StageTwo from "./stages/StageTwo";
 
 const App = () => {
     const [stage, setStage] = useState(0);
@@ -11,6 +12,8 @@ const App = () => {
             return <StageZero setStage={setStage} />;
         case 1:
             return <StageOne setStage={setStage} />;
+        case 2:
+            return <StageTwo />;
         default:
             return null;
     }
