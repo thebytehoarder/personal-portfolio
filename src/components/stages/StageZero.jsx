@@ -22,7 +22,7 @@ const StageZero = ({ setStage }) => {
     const [effect, setEffect] = useState(0);
     const [canSkip, setCanSkip] = useState(true);
 
-    const smartphone = window.innerWidth < 880;
+    const smartphone = window.innerWidth < 700;
 
     const effects = [
         () => {
